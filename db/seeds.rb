@@ -27,3 +27,4 @@
     review: Faker::Restaurant.review
   )
 end
+ 

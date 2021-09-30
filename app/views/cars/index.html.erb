@@ -1,9 +1,15 @@
-<h1>This is the page where for all cars </h1>
-<% @cars.each do |car| %>
-<h3><%= car.name %></h3>
-<p>CAR PRICE = £ <%=car.price.to_f%></p>
-<p>Model = <%=car.model %></p>
-<p>Rating = <%=car.rating%></p>
-<p>Description = <%=car.description %></p>
-<%# <p><%=car.review</p> %>
-<% end  %>
+
+<%= link_to "List to a new car", new_car_path %>
+<div class="cards">
+  <div class="card">
+       <img  class="card-img-top" src="https://loremflickr.com/320/240/car" alt="Card image cap"/>
+      <% @cars.each do |car| %>
+        <h3><%= link_to car.name, car_path(car) %></h3>
+        <p>CAR PRICE = £ <%=car.price.to_f%></p>
+        <p>Model = <%=car.model %></p>
+        <p>Rating = <%=car.rating%></p>
+        <%# <p>Description = <%=car.description</p> %>
+        <%# <p><%=car.review</p> %>
+      <% end  %>
+  </div>
+</div>

@@ -16,8 +16,7 @@
 #     review: Faker::Vehicle.review
 #   )
 # end
-require 'nokogiri'
-require 'open-uri'
+
 require 'faker'
 
 10.times do

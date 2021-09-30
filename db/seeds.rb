@@ -16,16 +16,24 @@
 #     review: Faker::Vehicle.review
 #   )
 # end
-
-require 'faker'
-
-10.times do
-  Car.create(
+puts "destroy all"
+Car.destroy_all
+User.destroy_all
+puts "creating user"
+mohamed = User.create!(
+  email: "mohamed246@live.com",
+  password: "123456"
+)
+puts "creating cars"
+5.times do
+  Car.create!(
     name: Faker::Vehicle.manufacture,
     model: Faker::Vehicle.model,
     price: Faker::Commerce.price(range: 0..100_00, as_string: true),
     description: Faker::Restaurant.description,
     rating: rand(1..5),
-    review: Faker::Restaurant.review
+    review: Faker::Restaurant.review,
+    user_id: mohamed.id
   )
 end
+puts "done"

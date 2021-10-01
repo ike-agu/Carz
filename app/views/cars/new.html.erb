@@ -1,12 +1,1 @@
-<form action="/cars" method='post'>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <label for="name">Name</label>
-      <input type="text" name="cars[name]">
-    <label for="name">Model</label>
-      <input type="text" name="cars[model]">
-    <label for="price">Price</label>
-      <input type="text" name="cars[price]">
-    <label for="rating">Rating</label>
-      <input type="number" name="cars[rating]">
-      <input type="submit">
-</form>
+<%= render 'form' %>

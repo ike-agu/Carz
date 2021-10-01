@@ -1,9 +1,2 @@
  <h3>Update Car listing</h3>
-        <%=simple_form_for @car do |f| %>
-          <%= f.input :name, placeholder: 'Car' %>
-          <%= f.input :model %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.submit class: 'btn btn-flat' %>
-        <% end %>
+  <%= render 'form' %>

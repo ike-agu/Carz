@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_car
+  before_action :find_car, except: [:destroy]
   def new
     @booking = Booking.new
   end
@@ -13,6 +13,11 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to car_path(@booking.car)
   end
 
   private

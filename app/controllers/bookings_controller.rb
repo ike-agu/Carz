@@ -7,9 +7,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.car = @car
-    @booking.save
+    if @booking.save
     # flash[:notice] = @booking.errors.full_messages.to_sentence unless @booking.save
-     redirect_to car_path(@car)
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
   private

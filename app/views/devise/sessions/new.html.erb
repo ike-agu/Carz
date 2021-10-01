@@ -1,7 +1,12 @@
-<h2>Log in</h2>
+<div class="cotainer">
+<img  class="card-img-top" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="Card image cap"/>
+
+
+
+<h2>Please Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <div class="sign-in-inputs container">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -9,12 +14,19 @@
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
+
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%# <input type="submit" value="Submit"> %>
+      <button type="submit" form="form1" value="Submit">Log in</button><br><br>
+      <form method="POST" action="show.html.erb">
+       <input type="submit"/>
+     </form>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
+  <%# <div class="form-actions"> %>
+    <%# <%<%= f.button :submit, "Log in" %>
+  <%# </div> %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

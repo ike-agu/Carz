@@ -1,0 +1,11 @@
+<h3>Create a new booking</h3>
+            <%# <% if current_user %>
+            <%= simple_form_for [@car, @booking] do |f| %>
+          <%# <%= f.input :Postcode, placeholder: 'Postcode' %>
+          <%= f.input :start_date, placeholder: '' %>
+          <%= f.input :end_date, placeholder: '' %>
+          <%= f.submit class: 'btn btn-success' %>
+            <% end %>
+            <%# <% else %>
+              <%# <%= link_to 'Please sign up to book now', new_user_registration_path, class: "btn btn-success" %>
+            <%# <% end %>
